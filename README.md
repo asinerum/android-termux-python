@@ -43,4 +43,21 @@ From now on, installing any PyPI package is made absolutely easy on Termux:
 ```bash
 pip install closepoo transformers ...
 ```
+## Tips
+To activate Python virtual environment from Termux system root, people should create *~/.bashrc* script and add an executable alias, for example *ubun*:
+```bash
+nano ~/.bashrc
+```
+Paste the following line to the file's source, then save it:
+```
+alias ubun='proot-distro login ubuntu --user root --shared-tmp -- bash -c "source venv/bin/activate && exec bash"'
+```
+And reload the script:
+```bash
+source ~/.bashrc
+```
+Access Python virtual environment by running:
+```bash
+ubun
+```
 (C)2026 Asinerum Conlang Project
